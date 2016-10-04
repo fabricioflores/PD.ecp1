@@ -4,6 +4,7 @@ public class Multiplicacion extends ExpresionComposite{
 
 	public Multiplicacion(Expresion exp1, Expresion exp2) {
 		super(exp1, exp2);
+		this.operacion = "*";
 	}
 
 	@Override
