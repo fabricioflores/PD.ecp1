@@ -15,38 +15,38 @@ public class ExpressionTest {
         this.exp3 = new Resta(this.exp1, new Numero(3));
         this.exp4 = new Multiplicacion(this.exp1, new Numero(2));
         this.exp5 = new Division(this.exp1, new Numero(3));
-        this.exp6 = new Suma(new Resta(new Numero(3), new Multiplicador(
+        this.exp6 = new Suma(new Resta(new Numero(3), new Multiplicacion(
                 new Division(this.exp1, new Numero(2)), new Numero(3))), this.exp1); // ((3-((4/2)*3))+4)
     }
 
     @Test
     public void testValor() {
-        assertEquals(4, this.exp1.operar());
+        assertEquals(4, this.exp1.resolve());
     }
 
     @Test
     public void TestSuma() {
-        assertEquals(6, this.exp2.operar());
+        assertEquals(6, this.exp2.resolve());
     }
 
     @Test
     public void testResta() {
-        assertEquals(1, this.exp3.operar());
+        assertEquals(1, this.exp3.resolve());
     }
 
     @Test
     public void testMultiplicacion() {
-        assertEquals(8, this.exp4.operar());
+        assertEquals(8, this.exp4.resolve());
     }
 
     @Test
     public void testDivision() {
-        assertEquals(1, this.exp5.operar());
+        assertEquals(1, this.exp5.resolve());
     }
 
     @Test
     public void testCompuesto() {
-        assertEquals(1, this.exp6.operar());
+        assertEquals(1, this.exp6.resolve());
     }
 
     @Test
