@@ -1,4 +1,4 @@
-	package command.calculator;
+package command.calculator;
 
 public class Calculator {
     private int total;
