@@ -24,4 +24,9 @@ public class Square extends Figure {
         return super.toString();
     }
 
+	@Override
+	public void accept(Visitor visitor) {
+		visitor.visitSquare(this);
+	}
+
 }
