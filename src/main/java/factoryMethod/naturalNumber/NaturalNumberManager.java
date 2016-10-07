@@ -1,11 +1,12 @@
 package factoryMethod.naturalNumber;
 
 public class NaturalNumberManager {
+	
 	private NaturalNumber naturalNumber;
 	private NaturalNumberCreator creator;
 	
-	public void createNaturalNumber(){
-		this.naturalNumber = this.creator.createNaturalNumber(1);
+	public void createNaturalNumber(int valor){
+		this.naturalNumber = this.creator.createNaturalNumber(valor);
 	}
 	
 	public void setNaturalNumberCreator(NaturalNumberCreator creator){

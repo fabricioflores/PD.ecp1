@@ -1,11 +1,10 @@
 package factoryMethod.naturalNumber;
 
 public class NaturalNumberEs extends NaturalNumber {
-	
-	private static final String[] lang ={"uno", "dos", "tres", "cuatro", "cinco"};
 
     public NaturalNumberEs(int value) {
 		super(value);
+		String[] lang ={"cero", "uno", "dos", "tres", "cuatro", "cinco"};
 		this.setTextValue(lang);
 	}
     
