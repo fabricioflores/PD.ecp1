@@ -1,4 +1,6 @@
-package state;
+package state.connection;
+
+import state.connection.Link;
 
 public final class LinkMock implements Link {
     private String msg;

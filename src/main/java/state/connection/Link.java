@@ -1,4 +1,4 @@
-package state;
+package state.connection;
 
 public interface Link {
     static final int ACK = 0;

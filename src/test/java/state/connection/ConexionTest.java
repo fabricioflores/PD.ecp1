@@ -1,7 +1,10 @@
-package state;
+package state.connection;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import state.connection.Conexion;
+import state.connection.Link;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;

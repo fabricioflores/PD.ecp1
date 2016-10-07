@@ -1,4 +1,4 @@
-package state;
+package state.connection;
 
 public abstract class Estado {
 	public abstract void abrir(Conexion conection);

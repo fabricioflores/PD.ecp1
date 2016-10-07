@@ -1,4 +1,4 @@
-package state;
+package state.connection;
 
 public class Conexion {
     private Estado state;
