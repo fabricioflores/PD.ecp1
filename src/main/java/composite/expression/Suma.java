@@ -1,4 +1,4 @@
-package expression;
+package composite.expression;
 
 public class Suma extends ExpresionComposite{
 

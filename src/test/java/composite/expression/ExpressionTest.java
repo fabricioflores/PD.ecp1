@@ -1,9 +1,16 @@
-package expression;
+package composite.expression;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import composite.expression.Division;
+import composite.expression.Expresion;
+import composite.expression.Multiplicacion;
+import composite.expression.Numero;
+import composite.expression.Resta;
+import composite.expression.Suma;
 
 public class ExpressionTest {
     private Expresion exp1, exp2, exp3, exp4, exp5, exp6;

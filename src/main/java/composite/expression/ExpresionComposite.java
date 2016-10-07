@@ -1,4 +1,4 @@
-package expression;
+package composite.expression;
 
 public abstract class ExpresionComposite extends Expresion{
 	private Expresion exp1;

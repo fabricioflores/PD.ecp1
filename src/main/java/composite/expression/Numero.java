@@ -1,4 +1,4 @@
-package expression;
+package composite.expression;
 
 public class Numero extends Expresion {
 	private int valor;

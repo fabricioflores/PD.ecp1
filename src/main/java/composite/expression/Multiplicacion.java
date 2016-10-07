@@ -1,4 +1,4 @@
-package expression;
+package composite.expression;
 
 public class Multiplicacion extends ExpresionComposite{
 
