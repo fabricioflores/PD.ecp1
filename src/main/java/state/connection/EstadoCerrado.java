@@ -1,9 +1,10 @@
 package state.connection;
 
-public class EstadoCerrado extends Estado{
+public class EstadoCerrado extends State{
 
 	@Override
 	public void abrir(Conexion conection) {
+		conection.setEstado(Estado.PREPARADO);
 		conection.setState(new EstadoPreparado());
 	}
 
@@ -27,12 +28,7 @@ public class EstadoCerrado extends Estado{
 	}
 
 	@Override
-	public String toString() {
-		return "CERRADO";
-	}
-
-	@Override
-	public void enviar(Conexion conection, Link link, String msg) {
+	public void enviar(Conexion conection, String msg) {
 		throw new UnsupportedOperationException("Acción no permitida... ");	
 	}
 

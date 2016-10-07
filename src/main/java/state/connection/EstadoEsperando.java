@@ -1,6 +1,6 @@
 package state.connection;
 
-public class EstadoEsperando extends Estado {
+public class EstadoEsperando extends State {
 
 	@Override
 	public void abrir(Conexion conection) {
@@ -23,22 +23,19 @@ public class EstadoEsperando extends Estado {
 	}
 
 	@Override
-	public void enviar(Conexion conection, Link link, String msg) {
+	public void enviar(Conexion conection, String msg) {
 		throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
 	public void recibir(Conexion conection, int respuesta) {
         if (respuesta == 0) {
+        	conection.setEstado(Estado.PREPARADO);
             conection.setState(new EstadoPreparado());
         } else {
+        	conection.setEstado(Estado.CERRADO);
             conection.setState(new EstadoCerrado());
         }
-	}
-
-	@Override
-	public String toString() {
-		return "ESPERANDO";
 	}
 
 }

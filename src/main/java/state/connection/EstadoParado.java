@@ -1,6 +1,6 @@
 package state.connection;
 
-public class EstadoParado extends Estado {
+public class EstadoParado extends State {
 
 	@Override
 	public void abrir(Conexion conection) {
@@ -18,22 +18,18 @@ public class EstadoParado extends Estado {
 
 	@Override
 	public void iniciar(Conexion conection) {
+		conection.setEstado(Estado.PREPARADO);
 		conection.setState(new EstadoPreparado());
 	}
 
 	@Override
-	public void enviar(Conexion conection, Link link, String msg) {
+	public void enviar(Conexion conection, String msg) {
 		throw new UnsupportedOperationException("Acción no permitida... ");
 	}
 
 	@Override
 	public void recibir(Conexion conection, int respuesta) {
 		throw new UnsupportedOperationException("Acción no permitida... ");
-	}
-
-	@Override
-	public String toString() {
-		return "PARADO";
 	}
 
 }
