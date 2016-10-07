@@ -1,4 +1,4 @@
-package factory.solution;
+package singleton.factory.solution;
 
 import java.util.HashMap;
 import java.util.Map;

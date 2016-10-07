@@ -1,9 +1,11 @@
-package factory;
+package singleton.factory;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import singleton.factory.ReferencesFactory;
 
 public class ReferencesFactoryTest {
     private ReferencesFactory factory;
