@@ -1,4 +1,4 @@
-package visitor;
+package visitor.figure;
 
 public abstract class Figure {
 

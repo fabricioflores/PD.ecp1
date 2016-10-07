@@ -1,4 +1,4 @@
-package visitor;
+package visitor.figure;
 
 public class Triangle extends Figure {
     private double base;
