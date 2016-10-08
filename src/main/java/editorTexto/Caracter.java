@@ -2,6 +2,11 @@ package editorTexto;
 
 public class Caracter extends TextoComponente{
 	private char c;
+	
+	public Caracter(char c){
+		this.c = c;
+	}
+
 	@Override
 	public void add(TextoComponente component) {		
 	}

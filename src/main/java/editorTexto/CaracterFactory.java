@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class CaracterFactory {
 	
-	private static final CaracterFactory factory = new CaracterFactory();
+	private static CaracterFactory factory = null;
 
 	private Map<Character, Caracter> charMap;
 		
@@ -18,6 +18,9 @@ public class CaracterFactory {
 	}
 	
     public static CaracterFactory getFactory(){
-    	return factory;
+    	if(CaracterFactory.factory == null){
+    		CaracterFactory.factory = new CaracterFactory();
+    	}
+    	return CaracterFactory.factory;
     }
 }
