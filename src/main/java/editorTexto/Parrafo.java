@@ -1,21 +1,31 @@
 package editorTexto;
 
-public class Parrafo extends TextoComposite{
+public class Parrafo extends TextoComposite {
 
 	@Override
-	public void remove() {		
+	public void remove(TextoComponente component) {
+		if (!component.isComposite()) {
+			this.getList().remove(component);
+		}
 	}
 
 	@Override
-	public void add(TextoComponente component) {	
-		if(component.getClass().isInstance(Parrafo.class) || component.getClass().isInstance(Texto.class)){
-			new UnsupportedOperationException();
+	public void add(TextoComponente component) {
+		if (!component.isComposite()) {
+			this.getList().add(component);
+		} else {
+			throw new UnsupportedOperationException();
 		}
 	}
 
 	@Override
 	public String print(boolean toUppercase) {
-		return null;
+		String result = "";
+		for (TextoComponente component : this.getList()) {
+			result = result + component.print(toUppercase);
+		}
+		result = result + "\n";
+		return result;
 	}
 
 }
