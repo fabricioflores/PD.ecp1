@@ -25,7 +25,6 @@ public class Texto extends TextoComposite {
 			result = result + component.print(toUppercase);
 		}
 		result = result + "---o---\n";
-		System.out.println(result);
 		return result;
 	}
 
