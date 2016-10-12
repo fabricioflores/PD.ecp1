@@ -29,13 +29,11 @@ public class EstadoEsperando extends State {
 
 	@Override
 	public void recibir(Conexion conection, int respuesta) {
-        if (respuesta == 0) {
-        	conection.setEstado(Estado.PREPARADO);
-            conection.setState(new EstadoPreparado());
-        } else {
-        	conection.setEstado(Estado.CERRADO);
-            conection.setState(new EstadoCerrado());
-        }
+		if (respuesta == 0) {
+			conection.setEstado(Estado.PREPARADO, new EstadoPreparado());
+		} else {
+			conection.setEstado(Estado.CERRADO, new EstadoCerrado());
+		}
 	}
 
 }

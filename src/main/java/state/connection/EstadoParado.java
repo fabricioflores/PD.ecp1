@@ -18,8 +18,7 @@ public class EstadoParado extends State {
 
 	@Override
 	public void iniciar(Conexion conection) {
-		conection.setEstado(Estado.PREPARADO);
-		conection.setState(new EstadoPreparado());
+		conection.setEstado(Estado.PREPARADO, new EstadoPreparado());
 	}
 
 	@Override
