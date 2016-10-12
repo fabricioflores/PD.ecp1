@@ -1,10 +1,9 @@
 package composite.expression;
 
-public class Multiplicacion extends ExpresionComposite{
+public class Multiplicacion extends ExpresionComposite {
 
 	public Multiplicacion(Expresion exp1, Expresion exp2) {
-		super(exp1, exp2);
-		this.setOperacion("*");
+		super(exp1, exp2, "*");
 	}
 
 	@Override

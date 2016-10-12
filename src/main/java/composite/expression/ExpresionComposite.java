@@ -1,16 +1,17 @@
 package composite.expression;
 
-public abstract class ExpresionComposite extends Expresion{
+public abstract class ExpresionComposite extends Expresion {
 	private Expresion exp1;
 	private Expresion exp2;
 	private String operacion;
-	
-	public ExpresionComposite(Expresion exp1, Expresion exp2){
+
+	public ExpresionComposite(Expresion exp1, Expresion exp2, String operacion) {
 		this.exp1 = exp1;
 		this.exp2 = exp2;
+		this.operacion = operacion;
 	}
-	
-	public String toString(){
+
+	public String toString() {
 		return "(" + exp1.toString() + this.operacion + exp2.toString() + ")";
 	}
 
