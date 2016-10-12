@@ -1,20 +1,20 @@
 package mementable.calculator;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
-public class GestorMementos {
-	private Map<String, MementoCalculadora> mementos = new HashMap<>();
-	
-	public void addMemento(String key, MementoCalculadora memento){
+public class GestorMementos<T> {
+	private SortedMap<String, T> mementos = new TreeMap<String, T>();
+
+	public void addMemento(String key, T memento) {
 		this.mementos.put(key, memento);
 	}
-	
-	public MementoCalculadora getMemento(String key){
+
+	public T getMemento(String key) {
 		return this.mementos.get(key);
 	}
-	
-	public String[] claves(){
+
+	public String[] claves() {
 		return this.mementos.keySet().toArray(new String[0]);
 	}
 }

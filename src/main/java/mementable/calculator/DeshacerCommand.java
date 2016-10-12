@@ -3,18 +3,20 @@ package mementable.calculator;
 import command.calculator.Calculator;
 import upm.jbb.IO;
 
-public class DeshacerCommand extends MementableComando{
+public class DeshacerCommand extends MementableComando {
 
-	public DeshacerCommand(Calculator calculator) {
+	private GestorMementos<MementoCalculadora> gm;
+
+	public DeshacerCommand(Calculator calculator, GestorMementos<MementoCalculadora> gm) {
 		super(calculator);
+		this.gm = gm;
 	}
 
 	@Override
 	public void execute() {
-		CalculadoraMementable cm = (CalculadoraMementable) this.getCalculator();
-		this.getGestorMementos().getMemento(IO.getIO().readString());
+		MementoCalculadora cm = gm.getMemento(IO.getIO().readString("Memento key"));
 		this.getCalculator().reset();
-		this.getCalculator().add(cm.getValorTotal());
+		this.getCalculator().add(cm.getTotal());
 	}
 
 	@Override

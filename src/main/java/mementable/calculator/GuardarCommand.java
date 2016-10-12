@@ -3,16 +3,19 @@ package mementable.calculator;
 import command.calculator.Calculator;
 import upm.jbb.IO;
 
-public class GuardarCommand extends MementableComando{
+public class GuardarCommand extends MementableComando {
 
-	public GuardarCommand(Calculator calculator) {
+	private GestorMementos<MementoCalculadora> gm;
+
+	public GuardarCommand(Calculator calculator, GestorMementos<MementoCalculadora> gm) {
 		super(calculator);
+		this.gm = gm;
 	}
 
 	@Override
 	public void execute() {
-		CalculadoraMementable cm = (CalculadoraMementable) this.getCalculator();
-		this.getGestorMementos().addMemento(IO.getIO().readString(), cm.createMementable());
+		MementoCalculadora mc = new MementoCalculadora(this.getCalculator().getTotal());
+		gm.addMemento(IO.getIO().readString("Key memento"), mc);
 	}
 
 	@Override

@@ -8,26 +8,27 @@ import command.calculator.SubtractCommand;
 import upm.jbb.IO;
 
 public class MainCalculatorMementos {
-    private CommandManager commandManager;
+	private CommandManager commandManager;
 
-    public MainCalculatorMementos() {
-        CalculadoraMementable calculator = new CalculadoraMementable();
-        this.commandManager = new CommandManager();
-        this.commandManager.add(new AddCommand(calculator));
-        this.commandManager.add(new SubtractCommand(calculator));
-        this.commandManager.add(new ResetCommand(calculator));
-        this.commandManager.add(new PrintCommand(calculator));
-        this.commandManager.add(new GuardarCommand(calculator));
-        this.commandManager.add(new DeshacerCommand(calculator));
+	public MainCalculatorMementos() {
+		CalculadoraMementable calculator = new CalculadoraMementable();
+		GestorMementos<MementoCalculadora> gm = new GestorMementos<MementoCalculadora>();
+		this.commandManager = new CommandManager();
+		this.commandManager.add(new AddCommand(calculator));
+		this.commandManager.add(new SubtractCommand(calculator));
+		this.commandManager.add(new ResetCommand(calculator));
+		this.commandManager.add(new PrintCommand(calculator));
+		this.commandManager.add(new GuardarCommand(calculator, gm));
+		this.commandManager.add(new DeshacerCommand(calculator, gm));
 
-    }
+	}
 
-    public void execute() {
-        String key = (String) IO.getIO().select(this.commandManager.keys());
-        this.commandManager.execute(key);
-    }
+	public void execute() {
+		String key = (String) IO.getIO().select(this.commandManager.keys());
+		this.commandManager.execute(key);
+	}
 
-    public static void main(String[] args) {
-        IO.getIO().addView(new MainCalculatorMementos());
-    }
+	public static void main(String[] args) {
+		IO.getIO().addView(new MainCalculatorMementos());
+	}
 }

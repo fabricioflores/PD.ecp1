@@ -2,8 +2,8 @@ package mementable.calculator;
 
 import command.calculator.Calculator;
 
-public class CalculadoraMementable extends Calculator implements Mementable{
-	
+public class CalculadoraMementable extends Calculator implements Mementable<MementoCalculadora> {
+
 	private int valorTotal;
 
 	public int getValorTotal() {
@@ -15,8 +15,8 @@ public class CalculadoraMementable extends Calculator implements Mementable{
 	}
 
 	@Override
-	public MementoCalculadora createMementable() {
-		return new MementoCalculadora();
+	public MementoCalculadora createMemento() {
+		return new MementoCalculadora(this.getTotal());
 	}
 
 	@Override
